@@ -8,7 +8,6 @@ To bridge this gap, we introduce ChineseEEG-2, a high-density EEG dataset that e
 
 A total of 12 healthy participants were recruited for the study, ranging in age from 18 to 25 years (mean age: 21.9 years; 4 males, 8 females). Among the 12 participants, four (2 males and 2 females) conducted the reading task, while the rest eight conducted the passive listening task. In the formal experiment, in total, 10.8 hours of reading data (around 3 hours per subject) and approximately 21.6 hours of listening data (around 3 hours per subject) were collected, amounting to 32.4 hours of data overall.
 
-**For more detailed information about our dataset, you can reach our paper on ???**
 
 **You can find the dataset via the ChineseNeuro Symphony community (CHNNeuro) in Science Data Bank platform ([https://doi.org/10.57760/sciencedb.CHNNeuro.00007](https://doi.org/10.57760/sciencedb.CHNNeuro.00007)) or via Openneuro ([https://openneuro.org/datasets/ds004952](https://openneuro.org/datasets/ds004952)).**
 
