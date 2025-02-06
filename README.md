@@ -75,16 +75,16 @@ We offer the embeddings of the reading materials and its resulting audio. The te
 
 ## Credit
 
-- Chen Sitong - Coder for most parts of the project, Experiment conductor, Data processing.
-- [He Cuilin](https://github.com/CuilinHe) - Experiment conductor
-- Li Beiqianyi - Experiment conductor
-- Li Dongyang - Coder for parts of the scripts used in experiment, Experiment conductor
+- [Chen Sitong](https://github.com/adhjk) - Coder for most parts of the project, Experiment conductor, Data processing.
+- [He Cuilin](https://github.com/CuilinHe) - Experiment conductor.
+- Li Beiqianyi - Experiment conductor.
+- [Li Dongyang](https://github.com/dongyangli-del) - Coder for parts of the scripts used in experiment, Experiment conductor.
 - Feel free to contact us if you have any questions about the project.
 
 ## Collaborators
 
 - [Wu Haiyan](https://github.com/haiyan0305)  -  University of Macau
-- [Liu Quanying] - Southern University of Science and Technology
+- Liu Quanying - Southern University of Science and Technology
 
 ## Funding
 
