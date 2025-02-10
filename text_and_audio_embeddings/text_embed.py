@@ -1,3 +1,9 @@
+'''
+Written by: Sitong Chen
+
+This is used to generate text embeddings.
+'''
+
 import os
 import torch
 import pandas as pd
