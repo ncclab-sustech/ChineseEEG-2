@@ -5,7 +5,7 @@ This document illustrates the pipeline of our EEG pre-processing and how to use 
 ## Data Pre-processing Pipeline
 Here, we pre-process our data to remove obvious artifact to the least extent. An overview of our pre-processing pipeline is shown in the figure below.
 
-![](https://github.com/ncclabsustech/Chinese_reading_task_eeg_processing/blob/main/image/processing_pipeline.png)
+![](https://github.com/ncclab-sustech/ListeningEEG/blob/main/image/Pipeline.jpg)
 
 Our processing procedure includes these steps:
 
@@ -94,7 +94,7 @@ Our data is formatted under the requirement of the BIDS standard format as shown
 
 The detailed format of our data structure can be found in our paper at 
 
-![](https://github.com/ncclabsustech/Chinese_reading_task_eeg_processing/blob/main/image/structure_new.png)
+![](https://github.com/ncclab-sustech/ListeningEEG/blob/main/image/Modality.jpg)
 
 ## Manual Processing Criteria
 
@@ -102,26 +102,47 @@ Example Name: subject_04_eeg_01
 
 ICA Example Figure：
 
-![](https://github.com/ncclabsustech/Chinese_reading_task_eeg_processing/blob/main/image/ica_topo.png)
+![](https://github.com/ncclab-sustech/ListeningEEG/blob/main/image/ica1.png)
+![](https://github.com/ncclab-sustech/ListeningEEG/blob/main/image/ica2.png)
 
 Components to Exclude:
 
-ICA001: This component has local maxima in the frontal area, which is a typical feature of eye blink artifacts.
+ICA000-009: These component has local maxima in the frontal area, which is a typical feature of eye blink artifacts.
 
-![](https://github.com/ncclabsustech/Chinese_reading_task_eeg_processing/blob/main/image/ica_001.png)
+![](https://github.com/ncclab-sustech/ListeningEEG/blob/main/image/eye.png)
 
-ICA006: This component may represent artifacts of eye movements or eye scanning, as it shows local maxima on the frontal and lateral aspects of the scalp.
+ICA010-014: These component may represent artifacts of eye movements or eye scanning, as it shows local maxima on the frontal and lateral aspects of the scalp.
 
-![](https://github.com/ncclabsustech/Chinese_reading_task_eeg_processing/blob/main/image/ica_006.png)
+![](https://github.com/ncclab-sustech/ListeningEEG/blob/main/image/muscle.png)
 
-ICA010: This component may be related to eye movement and electrocardiographic artifacts, as it exhibits local maxima in the frontal region and near the ears.
+ICA018: This component has local maxima in the frontal area, which is a typical feature of eye blink artifacts.
 
-![](https://github.com/ncclabsustech/Chinese_reading_task_eeg_processing/blob/main/image/ica_010.png)
+![](https://github.com/ncclab-sustech/ListeningEEG/blob/main/image/eye4.png)
 
-ICA007: This component may be temporally related to electrocardiographic artifacts, as it is characterized by prominent maxima near the ears.
+ICA019: This component may be temporally related to electrocardiographic artifacts, as it exhibits characteristic maxima at the edges of the scalp.
 
-![](https://github.com/ncclabsustech/Chinese_reading_task_eeg_processing/blob/main/image/ica_007.png)
+![](https://github.com/ncclab-sustech/ListeningEEG/blob/main/image/heart.png)
 
-ICA015: This component may be temporally related to electrocardiographic artifacts, as it exhibits characteristic maxima at the edges of the scalp.
+ICA020: This component has local maxima in the frontal area, which is a typical feature of eye blink artifacts.
 
-![](https://github.com/ncclabsustech/Chinese_reading_task_eeg_processing/blob/main/image/ica_015.png)
+![](https://github.com/ncclab-sustech/ListeningEEG/blob/main/image/noise.png)
+
+ICA024: This component has local maxima in the frontal area, which is a typical feature of eye blink artifacts.
+
+![](https://github.com/ncclab-sustech/ListeningEEG/blob/main/image/eye2.png)
+
+ICA027: This component may be temporally related to electrocardiographic artifacts, as it is characterized by prominent maxima near the ears.
+
+![](https://github.com/ncclab-sustech/ListeningEEG/blob/main/image/noise2.png)
+
+ICA034: This component may be related to eye movement and electrocardiographic artifacts, as it exhibits local maxima in the frontal region and near the ears.
+
+![](https://github.com/ncclab-sustech/ListeningEEG/blob/main/image/eye3.png)
+
+ICA035: This component may be related to artifacts caused by equipment in the experiment.
+
+![](https://github.com/ncclab-sustech/ListeningEEG/blob/main/image/noise3.png)
+
+ICA038: This component may be temporally related to electrocardiographic artifacts, as it exhibits characteristic maxima at the edges of the scalp.
+
+![](https://github.com/ncclab-sustech/ListeningEEG/blob/main/image/noise4.png)
