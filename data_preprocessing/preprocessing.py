@@ -4,7 +4,17 @@ import numpy as np
 import argparse
 from convert_eeg_to_bids import convert_to_bids
 
+'''
+Written by: Xinyu Mou
 
+With changes made by Sitong Chen on 2024/11/12:
+Defined one chapter per run for novel material.
+For previous version, please refer to:
+https://github.com/ncclabsustech/Chinese_reading_task_eeg_processing/blob/main/data_preprocessing_and_alignment/README.md
+This is for preprocessing the EEG data to BIDS format.
+For preprocessing pipeline and usage, please refer to:
+https://github.com/ncclab-sustech/ListeningEEG/blob/main/data_preprocessing/README.md
+'''
 
 def get_chapter_events(raw):
     """
