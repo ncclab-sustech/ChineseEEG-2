@@ -1,10 +1,16 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-"""
-Author: Sitong Chen, Dongyang Li
+'''
+Based on code written by Xinyu Mou:
+https://github.com/ncclabsustech/Chinese_reading_task_eeg_processing/blob/main/experiment/play_novel.py
 
-This is the UI part for displaying the pre-processed novel on the screen and sending triggers.
-"""
+With changes made by Dongyang Li and Sitong Chen on 2024/7/28:
+Separated ui and event sending to multithreading, and changed highlighted character to highlighted line
+
+This is the UI part of the Reading-aloud task experiment, for displaying the pre-processed novel on the screen and sending triggers.
+For experiment pipeline and usage, please refer to:
+https://github.com/ncclab-sustech/ListeningEEG/blob/main/experiment/README.md
+'''
 import math
 import time
 import argparse
