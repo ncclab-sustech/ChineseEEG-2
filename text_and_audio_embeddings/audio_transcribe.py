@@ -1,3 +1,9 @@
+'''
+Written by: Sitong Chen
+
+This is used to generate transcripts of given audio and organize them into proper folder structures.
+'''
+
 import os
 import csv
 import torch
