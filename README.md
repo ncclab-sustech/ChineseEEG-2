@@ -16,7 +16,7 @@ The code repository contains three main modules, including scripts to reproduce 
 
 Our EEG recording and pre-processing pipeline is as follows:
 
-![1738735804407](image/README/1738735804407.jpg)
+![Pipeline](image/Pipeline.jpg)
 
 ## Device
 
@@ -36,7 +36,7 @@ To prepare experimental materials, conduct the experiment, and analyze the data,
 
 ### Environment Settings
 
-Firstly, please ensure that your code running environment is properly set up, the required packages and their corresponding version information can be found in the [requirement.txt](https://github.com/ncclabsustech/Chinese_reading_task_eeg_processing/blob/main/requirements.txt) file located in the project's root directory.
+Firstly, please ensure that your code running environment is properly set up, the required packages and their corresponding version information can be found in the [requirement.txt](https://github.com/ncclab-sustech/ListeningEEG/blob/main/requirements.txt) file located in the project's root directory.
 
 ### Experiment Materials Preparation
 
@@ -85,7 +85,11 @@ We offer the embeddings of the reading materials and its resulting audio. The te
 
 - [Wu Haiyan](https://github.com/haiyan0305)  -  University of Macau
 - Liu Quanying - Southern University of Science and Technology
-
+- [Wang Xindi](https://github.com/sandywang)
+- Wu Mingyang
+- Shen Xinke
+- Wang Song
+- Wei Xuetao
 ## Funding
 
 
