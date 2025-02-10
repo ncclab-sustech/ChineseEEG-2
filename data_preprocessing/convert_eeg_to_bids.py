@@ -15,6 +15,13 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 
+'''
+Written by: Jianyu Zhang, Xinyu Mou
+
+This is used as conversion of data to BIDS format in preprocessing.py.
+'''
+
+
 def convert_to_bids(raw, ica_component=None, ica_topo_figs=None, ica_dict=None, bad_channel_dict=None, sub_id='m1', ses='LittlePrince',
                     task='Reading', run=1, bids_root='derivative/preproc',
                     dataset_name='Novel Reading', dataset_type='derivative',
