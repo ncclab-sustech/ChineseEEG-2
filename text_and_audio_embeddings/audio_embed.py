@@ -1,3 +1,8 @@
+'''
+Written by: Sitong Chen
+
+This is used to generate audio embeddings.
+'''
 import os
 import torch
 import torchaudio
@@ -5,11 +10,6 @@ from transformers import Wav2Vec2Processor, Wav2Vec2Model
 import numpy as np
 from transformers import AutoProcessor, AutoModelForCTC
 
-'''
-Written by: Sitong Chen
-
-This is used to generate audio embeddings.
-'''
 
 processor = AutoProcessor.from_pretrained("airesearch/wav2vec2-large-xlsr-53-th")
 model = AutoModelForCTC.from_pretrained("airesearch/wav2vec2-large-xlsr-53-th")
