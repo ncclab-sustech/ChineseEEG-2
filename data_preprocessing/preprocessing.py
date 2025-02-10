@@ -1,9 +1,3 @@
-import mne
-from mne.preprocessing import ICA
-import numpy as np
-import argparse
-from convert_eeg_to_bids import convert_to_bids
-
 '''
 Written by: Xinyu Mou
 
@@ -15,6 +9,14 @@ This is for preprocessing the EEG data to BIDS format.
 For preprocessing pipeline and usage, please refer to:
 https://github.com/ncclab-sustech/ListeningEEG/blob/main/data_preprocessing/README.md
 '''
+
+
+import mne
+from mne.preprocessing import ICA
+import numpy as np
+import argparse
+from convert_eeg_to_bids import convert_to_bids
+
 
 def get_chapter_events(raw):
     """
