@@ -3,6 +3,12 @@ import re
 import openpyxl
 import os
 
+'''
+Written by: Jianyu Zhang, Xinyu Mou
+
+This is used to cut Chinese novel to experiment format.
+'''
+
 def delete_specific_element(str, element):
     """Remove specific elements from a string"""
     segments = re.split(element, str)
