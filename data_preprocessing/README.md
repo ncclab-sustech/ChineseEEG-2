@@ -11,7 +11,7 @@ Our processing procedure includes these steps:
 
 #### Data Segmentation
 
-We will remain a short time period before and after the valid time range. We will locate the cutting position by referencing the EEG mark. Detailed information can be seen in the method `cut_single_eeg` in `preprocessing.py`. In our procedure, we set the remaining time before the valid range to 10s.
+We will remain a short time period before and after the valid time range. We will locate the cutting position by referencing the EEG mark. Detailed information can be seen in the method `cut_single_eeg` in `preprocessing.py`. In our procedure, we set the remaining time before the valid range to 10s. Also, we defined one chapter per run for novel material, please adjust based on your definition of segmentation of runs.
 
 #### Resample and Notch filter
 
