@@ -91,7 +91,7 @@ PREE：End of the preface
 
 The experimental setup is as below:
 
-![setup](image/setup.png)
+![setup](https://github.com/ncclab-sustech/ListeningEEG/blob/main/image/setup.png)
 
 Below are the operational steps and an example of starting the project from scratch, using the novel *The Little Prince* as an example.
 
