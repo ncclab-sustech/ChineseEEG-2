@@ -91,7 +91,7 @@ PREE：End of the preface
 
 The experimental setup is as below:
 
-![](https://github.com/ncclabsustech/Chinese_reading_task_eeg_processing/blob/main/image/exp_layout.png)
+![setup](image/setup.png)
 
 Below are the operational steps and an example of starting the project from scratch, using the novel *The Little Prince* as an example.
 
