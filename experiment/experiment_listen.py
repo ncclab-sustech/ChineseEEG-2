@@ -17,6 +17,18 @@ import concurrent.futures
 import scipy.io.wavfile as wav
 import sounddevice as sd
 
+'''
+Written by Sitong Chen on 2024/7/30
+
+Based on code written by Xinyu Mou:
+https://github.com/ncclabsustech/Chinese_reading_task_eeg_processing/blob/main/experiment/play_novel.py
+
+This is the ui part of the Passive-listening task experiment, which only demonstrate a white cross in black background
+For experiment pipeline and usage, please refer to:
+https://github.com/ncclab-sustech/ListeningEEG/blob/main/experiment/README.md
+'''
+
+
 # Network communication
 context = zmq.Context()
 socket = context.socket(zmq.PUB)
