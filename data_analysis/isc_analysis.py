@@ -184,7 +184,7 @@ def load_bids_data(bids_path, subjects, session, task, run):
 
 def filter_data(data, sfreq, l_freq=1.0):
     """
-    Band-pass filter the data to retain only frequencies above 10Hz.
+    Band-pass filter the data to retain only frequencies above 1Hz.
     """
     filtered_data = {}
 
