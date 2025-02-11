@@ -8,7 +8,7 @@ The script in this folder contains code for source reconstruction and Inter-Subj
 
 We use defined head models as template to help create solutions:
 
-![](https://github.com/connectomicslab/connectomemapper3)
+[head model download](https://github.com/connectomicslab/connectomemapper3)
 
 The detailed information about the parameters are shown below:
 
@@ -53,3 +53,6 @@ def main():
         bids_paths, subject_mapping, tasks, session, run, sfreq, start_sec, end_sec, n_components, runs_list
     )
 ```
+
+## Audio reconstruction
+We also performed audio reconstruction to validate our dataset, to use this code, please refer to [mTRF-Toolbox](https://sourceforge.net/projects/aespa/)
