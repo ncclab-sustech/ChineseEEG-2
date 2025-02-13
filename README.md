@@ -86,10 +86,10 @@ We offer the embeddings of the reading materials and its resulting audio. The te
 - [Wu Haiyan](https://github.com/haiyan0305)  -  University of Macau
 - Liu Quanying - Southern University of Science and Technology
 - [Wang Xindi](https://github.com/sandywang)
-- Wu Mingyang
-- Shen Xinke
-- Wang Song
-- Wei Xuetao
+- Wu Mingyang - Southern University of Science and Technology
+- Shen Xinke - Southern University of Science and Technology
+- Wang Song - Southern University of Science and Technology
+- Wei Xuetao - Southern University of Science and Technology
 ## Funding
 
 
