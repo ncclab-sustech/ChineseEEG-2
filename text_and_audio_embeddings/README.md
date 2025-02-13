@@ -12,7 +12,7 @@ The required packages and their corresponding version information can be found i
 
 ### Text Embeddings
 
-We offer the code `text_embedding.py` and audio_embed to generate the text embeddings. Embeddings of the text and audio of the two novels were calculated using a pre-trained language and speech model BERT-base-Chinese and Wav2Vec2 to generate text and audio embeddings, enabling multi-model alignment with EEG recordings.
+We offer the code `text_embedding.py` and audio_embed to generate the text embeddings. Embeddings of the text and audio of the two novels were calculated using a pre-trained language and speech model [BERT-base-Chinese](https://huggingface.co/google-bert/bert-base-chinese) and [Wav2Vec2](https://huggingface.co/ehcalabres/wav2vec2-lg-xlsr-en-speech-emotion-recognition) to generate text and audio embeddings, enabling multi-model alignment with EEG recordings.
 
 We offered text/audio embeddings in `ReadingAloud/materials&embeddings` in the dataset. **Notice: The audio recording for Subject 1(male) in the reading aloud task was incomplete due to technical issues, resulting in the last chapter of *Garnett Dream* not being recorded. **
 
