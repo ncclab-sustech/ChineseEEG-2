@@ -2,15 +2,30 @@
 
 ## Introduction
 
-Now-existing Electroencephalography (EEG) datasets are mainly based on English, which encounters difficulty when representing Chinese. While there have been EEG datasets related to linguistic stimuli, the existing resources are limited, and many faces the problem of teacher-forcing.
-In our future studies, we plan to promote a unified encoder of multi-modalities for semantic decoding, which suggests the need of more data support.
-To bridge this gap, we introduce ChineseEEG-2, a high-density EEG dataset that extends ChineseEEG containing both reading aloud and auditory listening tasks. As a unique multimodal EEG dataset featuring synchronized reading and listening tasks based on the same corpus, ChineseEEG-2 dataset enables the exploration of how the brain processes language across both visual and auditory modalities in the context of Chinese natural language. It offers valuable insights into multimodal semantic alignment, neural decoding, and the alignment between large language models and neural processes, contributing to the development of BCI systems for language decoding
+Existing Electroencephalography (EEG) datasets for language processing are predominantly English-centric, limiting cross-linguistic neuroscience and brain-computer interface (BCI) research. While current resources capture single-modality tasks (e.g., silent reading or auditory comprehension), they lack synchronized multimodal alignment and ignore understudied languages like Chinese. Furthermore, most datasets face challenges in temporal precision ("teacher-forcing" paradigms) and fail to bridge neural representations with emerging multimodal AI systems.
 
-A total of 12 healthy participants were recruited for the study, ranging in age from 18 to 25 years (mean age: 21.9 years; 4 males, 8 females). Among the 12 participants, four (2 males and 2 females) conducted the reading task, while the rest eight conducted the passive listening task. In the formal experiment, in total, 10.8 hours of reading data (around 3 hours per subject) and approximately 21.6 hours of listening data (around 3 hours per subject) were collected, amounting to 32.4 hours of data overall.
+To address these gaps, we present ChineseEEG-2, the first high-density EEG dataset enabling cross-modal semantic alignment between reading aloud and passive listening within a unified Chinese corpus. Building on the silent reading-focused ChineseEEG dataset, ChineseEEG-2 also includes:
 
-This repository contains all the code to reproduce the experiment data processing, and data analysis procedure in our paper. It aims to provide a comprehensive paradigm for the establishment of an EEG dataset based on Chinese linguistic corpora. It seeks to facilitate the advancement of technologies related to EEG-based semantic decoding and brain-computer interfaces.
+#### Multimodal synchronization: Precisely aligned EEG, text, and audio timelines for identical semantic stimuli across reading/listening tasks.
 
-The code repository contains four main modules, including scripts to reproduce the experiment, data processing, data embedding, and data analysis procedures. The script `cut_chinese_novel.py` in the`novel_segmentation` folder contains the code to prepare the stimulation materials from source materials. The script `ui_experiment.py` contains code for the reading experiment and the `recording.py` enables trigger sending in the experiment, which should be guaranteed to be initiated first in the experiment. The script `experiment_listen.py` contains code for the listening experiment. The script `preprocessing.py` in `data_preprocessing` folder contains the main part of the code to apply pre-processing on EEG data and conversion to BIDS format. The script `text_embed.py` in the `text_and_audio_embeddings`  folder contains code to generate embeddings for semantic materials while the script `audio_embed.py` is for generating audio embeddings.  The script `isc_analysis.py` contains necessary code for ISC analysis, and the script `source_analysis.ipynb` is for calculating forward and inverse solution to reconstruct source space.  The code for EEG data pre-processing is highly configurable, permitting flexible adjustments of various pre-processing parameters, such as data segmentation range, downsampling rate, filtering range, and choice of ICA algorithm, thereby ensuring convenience and efficiency. Researchers can modify and optimize this code according to their specific requirements.
+#### Cross-task neural data: 32.4 hours of data from 12 participants (4 readers, 8 listeners) to study modality-specific and shared neural dynamics.
+
+#### MLLM-EEG alignment: Precomputed semantic embeddings (BERT and Wav2Vec2) for direct comparison with multimodal large language models (MLLMs).
+
+This dataset uniquely supports three research frontiers:
+
+Cross-modal semantic processing: How the brain integrates visual (text) and auditory (speech) language inputs.
+
+Multimodal neural decoding: Developing BCI systems leveraging complementary neural signatures of reading and listening.
+
+Brain-MLLM alignment: Benchmarking artificial language models against human neural representations.
+
+The repository provides full experimental code, preprocessing pipelines, and analysis tools (ISC, source reconstruction, stimulus decoding) to accelerate EEG-based language research. 
+
+## Repository structure
+
+The code repository contains five main modules, including scripts to prepare the materials, reproduce the experiment, data processing, data embedding, and data analysis procedures. The script `cut_chinese_novel.py` in the`novel_segmentation` folder contains the code to prepare the stimulation materials from source materials. The script `ui_experiment.py` contains code for the reading experiment and the `recording.py` enables trigger sending in the experiment, which should be guaranteed to be initiated first in the experiment. The script `experiment_listen.py` contains code for the listening experiment. The script `preprocessing.py` in `data_preprocessing` folder contains the main part of the code to apply pre-processing on EEG data and conversion to BIDS format. The script `text_embed.py` in the `text_and_audio_embeddings`  folder contains code to generate embeddings for semantic materials while the script `audio_embed.py` is for generating audio embeddings.  The script `isc_analysis.py` contains necessary code for ISC analysis, and the script `source_analysis.ipynb` is for calculating forward and inverse solution to reconstruct source space.  The code for EEG data pre-processing is highly configurable, permitting flexible adjustments of various pre-processing parameters, such as data segmentation range, downsampling rate, filtering range, and choice of ICA algorithm, thereby ensuring convenience and efficiency. Researchers can modify and optimize this code according to their specific requirements.
+
 ## Pipeline
 
 Our EEG recording and pre-processing pipeline is as follows:
