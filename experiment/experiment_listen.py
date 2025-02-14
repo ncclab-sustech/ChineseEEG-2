@@ -142,7 +142,7 @@ def trigger_events(event_type, global_start_time, event_times, rate):
 
 def play_audio_with_triggers(audio_files, audio_path, eeg_sampling_rate, ROWS_times, ROWE_times, start_indices, win):
     global global_start_time, image
-    image = visual.ImageStim(win=win, name='image', image='图片1.png', pos=(0, -0.05), size=(1.7, 1.2))
+    image = visual.ImageStim(win=win, name='image', image='screen_display.png', pos=(0, -0.05), size=(1.7, 1.2))
     # Calculate global start time
     end_index = [0 for i in range(len(audio_files))]
     rows_array = np.array(ROWS_times)
@@ -261,7 +261,7 @@ def main_experiment():
     win = visual.Window(size=[800, 600], fullscr=args.fullscreen, screen=0, winType='pyglet', allowStencil=False,
                         monitor='testMonitor', color=[0, 0, 0], colorSpace='rgb', blendMode='avg', useFBO=True,
                         units='height')
-    image = visual.ImageStim(win=win, name='image', image='图片1.png', pos=(0, 0), size=(1.5, 1.5))
+    image = visual.ImageStim(win=win, name='image', image='screen_display.png', pos=(0, 0), size=(1.5, 1.5))
 
     win.mouseVisible = False
     expInfo['frameRate'] = win.getActualFrameRate()
