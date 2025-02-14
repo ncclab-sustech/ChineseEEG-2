@@ -6,7 +6,7 @@ This project aims to conduct a novel reading task with **real-time highlighted s
 
 ## Device Models
 
-EGI: 128-channel
+EGI: GSN-HydroCel-128
 
 ## Environment
 
