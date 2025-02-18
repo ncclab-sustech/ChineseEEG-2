@@ -24,7 +24,22 @@ The repository provides full experimental code, preprocessing pipelines, and ana
 
 ## Repository structure
 
-The code repository contains five main modules, including scripts to prepare the materials, reproduce the experiment, data processing, data embedding, and data analysis procedures. The script `cut_chinese_novel.py` in the`novel_segmentation` folder contains the code to prepare the stimulation materials from source materials. The script `ui_experiment.py` contains code for the reading experiment and the `recording.py` enables trigger sending in the experiment, which should be guaranteed to be initiated first in the experiment. The script `experiment_listen.py` contains code for the listening experiment. The script `preprocessing.py` in `data_preprocessing` folder contains the main part of the code to apply pre-processing on EEG data and conversion to BIDS format. The script `text_embed.py` in the `text_and_audio_embeddings`  folder contains code to generate embeddings for semantic materials while the script `audio_embed.py` is for generating audio embeddings.  The script `isc_analysis.py` contains necessary code for ISC analysis, and the script `source_analysis.ipynb` is for calculating forward and inverse solution to reconstruct source space.  The code for EEG data pre-processing is highly configurable, permitting flexible adjustments of various pre-processing parameters, such as data segmentation range, downsampling rate, filtering range, and choice of ICA algorithm, thereby ensuring convenience and efficiency. Researchers can modify and optimize this code according to their specific requirements.
+The code repository contains five main modules, including scripts to prepare the materials, reproduce the experiment, data processing, data embedding, and data analysis procedures. 
+#### Material preparation
+The script `cut_chinese_novel.py` in the `novel_segmentation` folder contains the code to prepare the stimulation materials from source materials.  
+
+#### Experiment reproduction
+The script `ui_experiment.py` contains code for the reading experiment and the `recording.py` enables trigger sending in the experiment, which should be guaranteed to be initiated first in the experiment. The script `experiment_listen.py` contains code for the listening experiment, similarly, he script `recording_listen.py` should be initiated before `experiment_listen.py`.  
+
+#### Preprocessing
+The script `preprocessing.py` in the `data_preprocessing` folder contains the main part of the code to apply pre-processing on EEG data and conversion to BIDS format.  
+
+#### Embedding
+The script `text_embed.py` in the `text_and_audio_embeddings` folder contains code to generate embeddings for semantic materials while the script `audio_embed.py` is for generating audio embeddings.  
+
+#### Data analysis
+The script `isc_analysis.py` contains necessary code for ISC analysis, and the script `source_analysis.ipynb` is for calculating forward and inverse solutions to reconstruct the source space. 
+The code for EEG data pre-processing is highly configurable, permitting flexible adjustments of various pre-processing parameters, such as data segmentation range, downsampling rate, filtering range, and choice of ICA algorithm, thereby ensuring convenience and efficiency. Researchers can modify and optimize this code according to their specific requirements.
 
 ## Pipeline
 
