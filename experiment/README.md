@@ -13,13 +13,13 @@ EGI: GSN-HydroCel-128
 **This project must be based on Python version 3.10!!!** You can use Anaconda to create a new environment to run this project. The command is as follows:
 
 ```
-conda create -n psychopy_tobii python=3.10
+conda create -n eegtask python=3.10
 ```
 
 Then you can activate this environment to install packages we need:
 
 ```
-conda activate psychopy_tobii
+conda activate eegtask
 ```
 
 ### Psychopy
@@ -100,7 +100,7 @@ Below are the operational steps and an example of starting the project from scra
 First, activate the environment we set up before, and then navigate to the directory where the project is located.
 
 ```
-conda activate psychopy_tobii
+conda activate eegtask
 cd <your_path_to_project>
 ```
 
@@ -117,13 +117,15 @@ Take a `.txt` novel file that meets the format requirements (format requirements
 
 - **At the end of each experimental session, it is necessary to replenish the saline for the participant's EEG cap and restart the EGI system.** 
 
-- The main process of the experiment includes: preface session (only in the first part) - formal reading - rest (including mandatory rest and participant-initiated rest periods). 
+- The main process of the experiment includes: preface session (only in the first part) - formal reading - rest (including mandatory rest and participant-initiated rest periods) - attention check. 
 
   - Preface Reading
 
   - Formal Reading
 
   - Rest
+    
+  - Attention check
 
     **restart the EGI system to ensure it is in a running state before the participant continues the experiment**
 
