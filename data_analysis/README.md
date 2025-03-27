@@ -26,6 +26,8 @@ The detailed information about the parameters are shown below:
 | output_dir                  | str   | path to output the solutions and source spaces.              |
 | fsaverage_data_dir          | str   | path to the downloaded data template.                        |
 
+In this analysis we regarded regions 4, 5, 58, 59, 60, 61, 62, 63, 50, 51, 52, 53, 102, 103, 104, 105, 110, 111, 112, 113, 66, 67, 70, 71, 72, 73, 82, 83, 30, 31, 10, 11, 13, 14, 15, 56, 57, 26, 27, 28, 29, 41, 42 and 43 in the lausanne2018.scale2 template as language-related regions.
+
 ## ISC analysis
 
 For ISC analysis we offer several functions that the user can adjust its usage based on different datasets:`combine_data`, `load_bids_data`, `filter_data`, `prepare_data_for_cca`, `train_subject`, `test_on_other_subjects`, and `run_isc_analysis`
