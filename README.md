@@ -46,7 +46,7 @@ The repository provides full experimental code, preprocessing pipelines, and ana
 
 Our EEG recording and pre-processing pipeline is as follows:
 
-![Pipeline](image/Pipeline_01.jpg)
+![Pipeline](image/Pipeline_01.png)
 
 ## Device
 
