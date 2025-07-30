@@ -6,11 +6,11 @@ Existing Electroencephalography (EEG) datasets for language processing are predo
 
 To address these gaps, we present ChineseEEG-2, the first high-density EEG dataset enabling cross-modal semantic alignment between reading aloud and passive listening within a unified Chinese corpus. Building on the silent reading-focused ChineseEEG dataset, ChineseEEG-2 also includes:
 
-#### Multimodal synchronization: Precisely aligned EEG, text, and audio timelines for identical semantic stimuli across reading/listening tasks.
+> Multimodal synchronization: Aligned EEG, text, and audio timelines for identical semantic stimuli across reading/listening tasks.
 
-#### Cross-task neural data: 32.4 hours of data from 12 participants (4 readers, 8 listeners) to study modality-specific and shared neural dynamics.
+> Cross-task neural data: 32.4 hours of data from 12 participants (4 readers, 8 listeners) to study modality-specific and shared neural dynamics.
 
-#### MLLM-EEG alignment: Precomputed semantic embeddings (BERT and Wav2Vec2) for direct comparison with multimodal large language models (MLLMs).
+> MLLM-EEG alignment: Precomputed semantic embeddings (BERT and Wav2Vec2) for direct comparison with multimodal large language models (MLLMs).
 
 This dataset uniquely supports three research frontiers:
 
@@ -22,30 +22,31 @@ Brain-MLLM alignment: Benchmarking artificial language models against human neur
 
 The repository provides full experimental code, preprocessing pipelines, and analysis tools (ISC, source reconstruction, stimulus decoding) to accelerate EEG-based language research. 
 
-## Repository structure
+**Dataset Access**: [Science Data Bank](https://doi.org/10.57760/sciencedb.CHNNeuro.00001)
 
-The code repository contains five main modules, including scripts to prepare the materials, reproduce the experiment, data processing, data embedding, and data analysis procedures. 
-#### Material preparation
-The script `cut_chinese_novel.py` in the `novel_segmentation` folder contains the code to prepare the stimulation materials from source materials.  
-
-#### Experiment reproduction
-The script `ui_experiment.py` contains code for the reading experiment and the `recording.py` enables trigger sending in the experiment, which should be guaranteed to be initiated first in the experiment. The script `experiment_listen.py` contains code for the listening experiment, similarly, he script `recording_listen.py` should be initiated before `experiment_listen.py`.  
-
-#### Preprocessing
-The script `preprocessing.py` in the `data_preprocessing` folder contains the main part of the code to apply pre-processing on EEG data and conversion to BIDS format.  
-
-#### Embedding
-The script `text_embed.py` in the `text_and_audio_embeddings` folder contains code to generate embeddings for semantic materials while the script `audio_embed.py` is for generating audio embeddings.  
-
-#### Data analysis
-The script `isc_analysis.py` contains necessary code for ISC analysis, and the script `source_analysis.ipynb` is for calculating forward and inverse solutions to reconstruct the source space. 
-The code for EEG data pre-processing is highly configurable, permitting flexible adjustments of various pre-processing parameters, such as data segmentation range, downsampling rate, filtering range, and choice of ICA algorithm, thereby ensuring convenience and efficiency. Researchers can modify and optimize this code according to their specific requirements.
-
+## Repository Structure
+```
+├── novel_segmentation/ # Text material processing
+│ └── cut_chinese_novel.py
+├── experiment/ # Task implementation
+│ ├── ui_experiment.py # Reading-aloud UI
+│ ├── recording.py # RL trigger handling
+│ ├── experiment_listen.py # Passive-listening UI
+│ └── recording_listen.py # PL trigger handling
+├── data_preprocessing/ # EEG pipeline
+│ └── preprocessing.py # Fully configurable BIDS converter
+├── text_and_audio_embeddings/ # Multimodal embeddings
+│ ├── text_embed.py
+│ └── audio_embed.py
+└── analysis/ # Neural decoding tools
+├── isc_analysis.py # Intersubject correlation
+└── source_analysis.ipynb # MNE-Python source reconstruction
+```
 ## Pipeline
 
 Our EEG recording and pre-processing pipeline is as follows:
 
-![Pipeline](image/Pipeline.jpg)
+![Pipeline](image/Pipeline_01.jpg)
 
 ## Device
 
@@ -59,17 +60,14 @@ The 128-channel EEG system with Geodesic Sensor Net (GSN) by EGI is a sophistica
 
 Participants were seated in an adjustable chair positioned in front of a screen displaying the text. The chair was designed for comfort and support during the extended experimental sessions, with adjustments made to maintain each participant's viewing distance at approximately 67 cm from the screen to simulate typical reading conditions and reduce eye strain. The monitor used measured 54 cm in width and 30.375 cm in height, with a resolution of 1920 × 1080 pixels and a vertical refresh rate of 60 Hz—consistent with the experimental settings in the original dataset [ChineseEEG](https://doi.org/10.57760/sciencedb.CHNNeuro.00007). For detailed information on the specific experimental paradigm, related parameter settings, and more, please refer to the [experiment](https://github.com/ncclab-sustech/ChineseEEG-2/blob/main/experiment/README.md) module for further details.
 
-## Usage
-
-To prepare experimental materials, conduct the experiment, and analyze the data, follow the steps below to execute the code.
 
 ### Environment Settings
 
-Firstly, please ensure that your code running environment is properly set up, the required packages and their corresponding version information can be found in the [requirement.txt](https://github.com/ncclab-sustech/ListeningEEG/blob/main/requirements.txt) file located in the project's root directory.
+Please ensure that your code running environment is properly set up. The required packages and their corresponding version information can be found in the [requirement.txt](https://github.com/ncclab-sustech/ListeningEEG/blob/main/requirements.txt) file located in the project's root directory.
 
 ### Experiment Materials Preparation
 
-First, to prepare the textual reading materials needed for the Reading-aloud task in the experiment, you need to convert your materials into the specific format below:
+To prepare the textual reading materials needed for the Reading-aloud task in the experiment, you need to convert your materials into the specific format below:
 
 ```
 Chinese_novel.txt
@@ -84,28 +82,58 @@ Chapter 2 of the novel
 ...
 ```
 
-then run the `cut_Chinese_novel.py` script located in the `novel_segmentation` folder to perform sentence segmentation of the novel text.
+Execute the `cut_Chinese_novel.py` script in the `novel_segmentation` directory to perform sentence segmentation on literary texts.
 
-We have uploaded the text materials we use in our experiment to the `materials&embeddings` part in out dataset, in which the folder `original_novel` contains the Chinese versions of the novels used in our experiment **The Little Prince** and **Garnett Dream**.
+### Experiment Implementation
 
-To perform Passive-listening task in this experiment, you need to collect the audio read by the participants in the Reading-aloud task.
+#### Reading Aloud (RA) Task
+1. Initiate `recording.py` first for trigger synchronization
+2. Execute `ui_experiment.py` for task presentation
 
-### Experiment Scripts
+#### Passive Listening (PL) Task
+1. Record audio from the Reading-aloud task to serve as stimulus inputs for PL experiments.
+2. Launch `recording_listen.py` for trigger initialization
+3. Run `experiment_listen.py` for stimulus delivery
 
-After material preparation, the script `ui_experiment.py` and `recording.py` can be used to perform Reading-aloud task the experiment. `recording.py` enables trigger sending in the experiment, which should be guaranteed to be initiated first in the experiment. The script `experiment_listen.py` and `recording_listen.py ` contains code for the listening experiment, `recording_listen.py ` should also be initiated first.
+## EEG Data Preprocessing
+Execute `preprocessing.py` (`data_preprocessing` module) for pipeline processing:
 
-### Data Pre-processing
+**Processing Workflow:**
+1. Data segmentation (adjust `run_definition` for chapter segmentation)
+2. Downsampling
+3. Bandpass filtering
+4. Bad channel interpolation (manual override available)
+5. Independent Component Analysis (manual component rejection)
+6. Re-referencing
 
-After completing the experimental data collection for all participants, we can use the `preprocessing.py` in the `data_preprocessing` module for data preprocessing. Our preprocessing workflow includes: data segmentation, downsampling, filtering, bad channel interpolation, independent component analysis (ICA), and re-referencing. You can change run_definition in the code to change your segmentation of the chapters. We provide options for manual intervention in bad channel interpolation and ICA step to ensure accuracy. All parameters for these methods can be modified by adjusting the settings in the code, the modalities and preprocessing steps are shown below. For detailed information on the preprocessing workflow, explanations of the code, and parameter settings, please refer to the [data_preprocessing](https://github.com/ncclab-sustech/ChineseEEG-2/blob/main/data_preprocessing/README.md) module.
+**Customization:**  
+Modify in-code parameters for all processing steps.  
 
-### Data Analysis
+[Preprocessing details](https://github.com/ncclab-sustech/ChineseEEG-2/blob/main/data_preprocessing/README.md)
 
-We offer code for ISC analysis and source reconstruction including `isc_analysis.py`which contains functioni for ISC analysis, allowing for the quantification of similarities in brain responses across different subjects and `source_analysis.ipynb`, which contains code for calculating forward and inverse solutions using MNE package. It is designed to work with the pre-processed EEG data, for detailed information, please refer to the [data_analysis](https://github.com/ncclab-sustech/ChineseEEG-2/blob/main/data_analysis/README.md) module.
+## EEG Analysis
+### Intersubject Correlation (ISC)
+- `isc_analysis.py`: Quantifies neural response similarity across subjects
 
-### Text/Audio Embeddings
+### Source Reconstruction
+- `source_analysis.ipynb`: Computes forward/inverse solutions using MNE-Python
 
-We offer the embeddings of the reading materials and its resulting audio. The text material used and its corresponding audio has a corresponding embedding file saved in `.npy` format, the text embedding is saved as a whole novel while the audio is separated based on chaper sequence. These text/audio embeddings provide a foundation for a series of subsequent studies, including the decoding analysis of EEG and textual data. For detailed information, please refer to the [embeddings](https://github.com/ncclab-sustech/ChineseEEG-2/blob/main/embeddings/README.md) module.
+**Input Requirement:** Preprocessed EEG data  
 
+[Analysis documentation](https://github.com/ncclab-sustech/ChineseEEG-2/blob/main/data_analysis/README.md)
+
+## Multimodal Embeddings
+### Data Organization
+- Text embeddings: Whole-novel `.npy` files
+- Audio embeddings: Chapter-segmented `.npy` files
+- File naming convention: `[novel]_[modality].npy`
+
+### Applications
+- EEG-text decoding
+- Cross-modal alignment studies
+- Neural encoding models
+
+[Embedding specifications](https://github.com/ncclab-sustech/ChineseEEG-2/blob/main/embeddings/README.md)
 ## Credit
 
 - [Chen Sitong](https://github.com/adhjk) - Coder for most parts of the project, Experiment conductor, Data processing.
