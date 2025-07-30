@@ -13,7 +13,7 @@ EGI: GSN-HydroCel-128
 **This project must be based on Python version 3.10!!!** You can use Anaconda to create a new environment to run this project. The command is as follows:
 
 ```
-conda create -n eegtask python=3.10
+conda create -n eegtask python=3.9
 ```
 
 Then you can activate this environment to install packages we need:
@@ -113,7 +113,7 @@ Take a `.txt` novel file that meets the format requirements (format requirements
 - First, connect the EGI equipment.
 - Next, adjust the parameters and run the main program. Set the addresses for the main body and preface parts in the variables `novel_path` and `preface_path`, respectively. Change `host_IP`and `egi_IP` to the IP numbers of your own devices. Set `isFirstSession` to True during the first run to include the preview session. Other adjustable parameters can be found in the "Parameters" section of the Code Explanation under Main Experiment. Note that you may need to modify some size and distance-related parameters according to your own setup. In subsequent runs, change the `novel_path` to read different parts of the novel and set `isFirstSession` to False.
 
-- During the forced break period, the EGI system will be disconnected. **You need to ensure the EGI system is in a running state before the participant continues the experiment, or the program will crash**
+- During the forced break period, the EGI system will be disconnected. **You need to ensure the EGI system is in a running state before the participant continues the experiment, or the program will crash.**
 
 - **At the end of each experimental session, it is necessary to replenish the saline for the participant's EEG cap and restart the EGI system.** 
 
