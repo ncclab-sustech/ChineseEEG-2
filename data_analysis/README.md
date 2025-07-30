@@ -26,35 +26,20 @@ The detailed information about the parameters are shown below:
 | output_dir                  | str   | path to output the solutions and source spaces.              |
 | fsaverage_data_dir          | str   | path to the downloaded data template.                        |
 
-In this analysis we regarded regions 4, 5, 58, 59, 60, 61, 62, 63, 50, 51, 52, 53, 102, 103, 104, 105, 110, 111, 112, 113, 66, 67, 70, 71, 72, 73, 82, 83, 30, 31, 10, 11, 13, 14, 15, 56, 57, 26, 27, 28, 29, 41, 42 and 43 in the lausanne2018.scale2 template as language-related regions.
-
 ## ISC analysis
 
-For ISC analysis we offer several functions that the user can adjust its usage based on different datasets:`combine_data`, `load_bids_data`, `filter_data`, `prepare_data_for_cca`, `train_subject`, `test_on_other_subjects`, and `run_isc_analysis`
+This Python script performs a comprehensive Inter-Subject Correlation (ISC) analysis on EEG data. The script is designed for high-throughput analysis, leveraging both GPU acceleration (via CuPy) and CPU parallel processing to handle large datasets efficiently.
 
-`combine_data`, `load_bids_data`, `filter_data`, `prepare_data_for_cca`: Functions for loading the data, filtering, preparing data into dict format, and combining data from multiple folders for potential between-group analysis. Please use the functions as the example below:
+### Workflow
 
-```
-def main():
-    bids_paths = ["dataset1", "dataset2"]  # Two BIDS folders
-    # Define subject lists for each folder
-    subject_mapping = [
-        ["m1", "m2", "f1", "f2"],  # Folder 1: Bids folder 1 subject names
-        ["01", "02", "03", "04", "05", "06", "07", "08"]  # Folder 2: Bids folder 2 subject names
-    ]
-    tasks = ["reading", "lis"]  # Tasks for each folder (Folder 1: reading, Folder 2: listening)
-    runs_list = ['11','12','13','14','15','16','17','18','19','110']
-    session = "littleprince"
-    run = "113"
-    sfreq = 128
-    start_sec = 30
-    end_sec = 40
-    n_components = 3  
-    # Run ISC analysis for both BIDS folders
-    run_isc_analysis_single_subject_training(
-        bids_paths, subject_mapping, tasks, session, run, sfreq, start_sec, end_sec, n_components, runs_list
-    )
-```
+The analysis follows these key steps:
 
-## Audio reconstruction
-We also performed audio reconstruction to validate our dataset, to use this code, please refer to [mTRF-Toolbox](https://sourceforge.net/projects/aespa/)
+1.  **Data Loading & Alignment:**
+    *   For each subject, loads pre-filtered EEG data, separated into frequency bands (`Delta`, `Theta`, `Alpha`, `Beta`).
+    *   Aligns the data segments from different subjects based on these shared event markers, ensuring that the correlation is calculated on temporally synchronized neural activity.
+
+2.  **Pairwise Correlation:**
+    *   The script iterates through all possible pairs of subjects for a given task, session, and run.
+    *   For each pair and each frequency band, it calculates the correlation for every common electrode channel.
+3.  **Output:**
+    *   The final results for each subject pair are saved as a `.npy` file containing a detailed dictionary with the original correlation `r-value`, `p-value`, statistics from the random permutation analysis, and a list of channels that showed statistically significant correlation.
