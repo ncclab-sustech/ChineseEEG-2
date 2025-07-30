@@ -94,7 +94,7 @@ Our data is formatted under the requirement of the BIDS standard format as shown
 
 The detailed format of our data structure can be found in our paper at 
 
-![](https://github.com/ncclab-sustech/ChineseEEG-2/blob/main/image/Modality.jpg)
+![](https://github.com/ncclab-sustech/ChineseEEG-2/blob/main/image/ChineseEEG2Modality_01.png)
 Notably, ICA of subject 01-03 in Passive-listening task was analyzed in batches, therefore, numpy files of ICA components in run 11-17, 17-114, 21-210, and 211-213 of _the Little Prince_ respectively refer to ICA components of EEG segments where run 11-17, 17-114, 21-210, and 211-213 are concatenated together,  for subject 04, we performed ica to segments 11-17, 17-111, 111-114, 21-210, and 211-213 , for subject 05, we performed ica to segments 11-114, 21-210, and 211-213. In _Garnett Dream_ session of subject 01-04 we performed ica to segments 11-13, 14-15(), 21-22, 23-24, for subject 05, 07, and 08 we performed ica to segments 11-13, 14, 21-22, 23-24, for subject 06, we performed ica to segments 11-13, 21-22, 23-24. 
 
 ## Manual Processing Criteria
