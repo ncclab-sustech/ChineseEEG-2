@@ -138,7 +138,7 @@ Modify in-code parameters for all processing steps.
 
 - [Chen Sitong](https://github.com/adhjk) - Coder for most parts of the project, Experiment conductor, Data processing.
 - [He Cuilin](https://github.com/CuilinHe) - Experiment conductor.
-- Li Beiqianyi - Experiment conductor.
+- [Li Beiqianyi](https://github.com/BeiqianyiLi) - Experiment conductor.
 - [Li Dongyang](https://github.com/dongyangli-del) - Coder for parts of the scripts used in experiment, Experiment conductor.
 - Feel free to contact us if you have any questions about the project.
 
